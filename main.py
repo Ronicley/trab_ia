@@ -41,7 +41,6 @@ def strNum(string):
 
 def convertBinaPraReal(valor):
     part1 = int(str(valor[0])+str(valor[1]), 2)
-    print(part1)
     cont = 1
     for i in valor[2::]:
         part2 = Fraction(int(i), 2**cont)
