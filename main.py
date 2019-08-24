@@ -1,4 +1,4 @@
-from random import choice, randint, random, uniform
+from random import choice, randint, uniform
 from fractions import Fraction
 def mod(valor):
     return abs(2 - float(valor)**2)
