@@ -43,7 +43,7 @@ def convertBinaPraReal(valor):
     part1 = int(str(valor[0])+str(valor[1]), 2)
     cont = 1
     for i in valor[2::]:
-        part2 = Fraction(int(i), 2**cont)
+        part2 =+ Fraction(int(i), 2**cont)
         cont+=1
     final = int(part1)+float(part2)
     return final
