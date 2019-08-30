@@ -3,16 +3,6 @@ from fractions import Fraction
 def mod(valor):
     return abs(2 - float(valor)**2)
 
-def criaListaCemStrings():
-    arq = open('palavras.txt', 'r', encoding="utf8")
-    palavras = arq.read()
-    listaPalavras = palavras.split('\n')
-    saida = []
-    for i in range(100):
-        saida.append(choice(listaPalavras))
-    arq.close()
-    return saida
-
 def criaListaCemStrings01():
     saida = []
     for i in range(100):
@@ -35,19 +25,20 @@ def num02 (listaFuncao):
 def trocaTroca(string1, string2):
     str1 = string1[0:4]+string2[4::]
     str2 = string1[4::]+string2[0:4]
-    return str1, str2
+    return [str1, str2]
+
 def troca(string):
     split = [i for i in string]
     r = ''
-    i = randint(0, len(split))
+    i = randint(0, len(split)-1)
     if (split[i]=='0'):
         split[i] = '1'
     else:
         split[i] = '0'
     return r.join(split)
 
-def strNum(string):
-    return [string, uniform(0, 1000)]
+def strNum(string, valor):
+    return [string, valor]
 
 def convertBinaPraReal(valor):
     part1 = int(str(valor[0])+str(valor[1]), 2)
@@ -57,6 +48,9 @@ def convertBinaPraReal(valor):
         cont+=1
     final = int(part1)+float(part2)
     return final
+
+def fdezMenoresAval(lista):
+    return sorted(lista, key = lambda x: (x[1], x[0]))[10::]
 
 def realToBinario(valor):
     vsplit = str(valor).split(".")#split do valor pelo ponto
@@ -71,12 +65,3 @@ def realToBinario(valor):
         l.append(str(r).split('.').pop(0)) #pega a parte inteira e coloca no vetor
     final = str(part1)+'.'+(ljoin.join(l))
     return final
-
-#print(criaListaCemStrings01())
-#print(realToBinario(3.015625))
-#print(convertBinaPraReal('11111111'))
-#print(strNum('ronicley'))
-#print(troca('00000000'))
-#print(trocaTroca('00001111', '11110000'))
-#print(mod(-2))
-#print(criaListaCemStrings())
