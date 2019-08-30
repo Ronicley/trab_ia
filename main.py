@@ -10,6 +10,16 @@ def criaListaCemStrings():
     saida = []
     for i in range(100):
         saida.append(choice(listaPalavras))
+    arq.close()
+    return saida
+
+def criaListaCemStrings01():
+    saida = []
+    for i in range(100):
+        p = ''
+        for i in range(8):
+            p+=''+str(randint(0, 1))
+        saida.append(p)
     return saida
 
 def num02 (listaFuncao):
@@ -62,9 +72,9 @@ def realToBinario(valor):
     final = str(part1)+'.'+(ljoin.join(l))
     return final
 
-
-print(realToBinario(0.25))
-print(convertBinaPraReal('11111111'))
+#print(criaListaCemStrings01())
+#print(realToBinario(3.015625))
+#print(convertBinaPraReal('11111111'))
 #print(strNum('ronicley'))
 #print(troca('00000000'))
 #print(trocaTroca('00001111', '11110000'))
