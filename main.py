@@ -48,6 +48,22 @@ def convertBinaPraReal(valor):
     final = int(part1)+float(part2)
     return final
 
+def realToBinario(valor):
+    vsplit = str(valor).split(".")#split do valor pelo ponto
+    part1 = bin(int(vsplit[0]))[2::]#converte a primeira parte pra binario
+    l = []
+    ljoin = ''
+    part2 = float(str(0)+'.'+vsplit[1])#pega a segunda parte adicona 0. ex.: 1.25 fica 0.25
+    r = part2*2 #multiplica por 2 para converter a segunda parte para binario 
+    l.append(str(r).split('.').pop(0)) #pega a parte inteira e coloca no vetor
+    for i in range(len(vsplit[1])-1):
+        r= float('0.'+str(r).split('.')[1])*2
+        l.append(str(r).split('.').pop(0)) #pega a parte inteira e coloca no vetor
+    final = str(part1)+'.'+(ljoin.join(l))
+    return final
+
+
+print(realToBinario(0.25))
 print(convertBinaPraReal('11111111'))
 #print(strNum('ronicley'))
 #print(troca('00000000'))
